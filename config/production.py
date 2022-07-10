@@ -2,6 +2,10 @@ import os
 
 from .base import *
 
+print("####################################################")
+print("############### Production Mode ####################")
+print("####################################################")
+
 # ALLOWED_HOSTS = os.env.list('ALLOWED_HOSTS')
 
 DATABASES = {
