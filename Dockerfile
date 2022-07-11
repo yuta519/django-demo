@@ -13,10 +13,10 @@ ENV PYTHONUNBUFFERED=1 \
     PYSETUP_PATH="/opt/pysetup"
 
 WORKDIR /app
+COPY . /app/
 
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install poetry
 
-COPY . /app/
 
 RUN poetry install
