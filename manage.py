@@ -7,9 +7,9 @@ import sys
 def main():
     """Run administrative tasks."""
     if os.environ.get("ENV") == "dev":
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.development")
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.development")
     elif os.environ.get("ENV") == "prd":
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.production")
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
     else:
         raise EnvironmentError("Environmental variables are not enough.")
 
