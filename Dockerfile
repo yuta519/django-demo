@@ -19,5 +19,6 @@ COPY ./pyproject.toml ./poetry.lock ./
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install poetry
 
-
 RUN poetry install
+
+ENTRYPOINT ["/app/entrypoint.sh"]
