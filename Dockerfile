@@ -14,6 +14,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /app
 COPY . /app/
+COPY ./pyproject.toml ./poetry.lock ./
 
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install poetry
