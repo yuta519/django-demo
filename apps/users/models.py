@@ -14,7 +14,7 @@ class User(models.Model):
     class Meta:
         verbose_name = 'ユーザ'
         verbose_name_plural = 'ユーザ'
-        db_table = 'tcs_skill'
+        db_table = 'users'
 
     def __str__(self) -> str:
         return self.name
