@@ -17,10 +17,10 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 
-from apps.api.views import user_views
+from apps.api.views.user_views import UsersView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/users", user_views.fetch_users),
+    path("api/users", UsersView.as_view()),
 ]
