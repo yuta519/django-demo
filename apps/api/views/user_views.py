@@ -11,6 +11,6 @@ from apps.api.serializers import UserSerializer
 @csrf_exempt
 def fetch_users(request):
     if request.method == 'GET':
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        # Consider using domain
+        serializer = UserSerializer(User.objects.all(), many=True)
         return JsonResponse(serializer.data, safe=False)
