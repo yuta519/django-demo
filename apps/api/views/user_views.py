@@ -5,15 +5,12 @@ from django.shortcuts import render
 from rest_framework.parsers import JSONParser
 
 from apps.api.models.user_models import User
-
-# Create your views here.
+from apps.api.serializers import UserSerializer
 
 
 @csrf_exempt
 def fetch_users(request):
-    """
-    return users
-    """
     if request.method == 'GET':
         users = User.objects.all()
-        return HttpResponse(users)
+        serializer = UserSerializer(users, many=True)
+        return JsonResponse(serializer.data, safe=False)
